@@ -4,6 +4,5 @@
 
 body {
   font-family: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
-  background-color: #f8fafc;
-  color: #1e293b;
+  @apply bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100;
 }
