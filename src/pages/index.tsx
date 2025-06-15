@@ -25,7 +25,8 @@ export default function Home() {
     { name: 'SQL', level: '★★★☆☆' },
     { name: 'Shell Script', level: '★★★☆☆' },
     { name: 'Next.js', level: '★★★☆☆' },
-    { name: 'React', level: '★★★☆☆' }
+    { name: 'React', level: '★★★☆☆' },
+    { name: 'Vue.js', level: '★★★☆☆' },
   ];
 
   const projects = [
