@@ -1,5 +1,6 @@
 import SectionTitle from '@/components/SectionTitle';
 import Image from 'next/image';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Home() {
   // プロフィール・スキル・プロジェクト・SNS情報を直接定義
@@ -47,12 +48,12 @@ export default function Home() {
     { name: 'X (Twitter)', url: 'https://twitter.com/imaty_dev' }
   ];
 
-  // 画像パス（ダミー画像URLをfallback）
   const imagePath = '/profile/profile.png';
-  const fallbackImage = 'https://avatars.githubusercontent.com/u/583231?v=4'; // GitHub Octocat
 
   return (
-    <div className="space-y-16 max-w-2xl mx-auto py-10">
+    <>
+      <ThemeToggle />
+      <div className="space-y-16 max-w-2xl mx-auto py-10">
       {/* プロフィールカード */}
       <section>
         <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center border border-gray-100 relative">
@@ -62,9 +63,6 @@ export default function Home() {
               alt="imaty プロフィール画像"
               width={112}
               height={112}
-              onError={(e) => {
-                // Next.js ImageではonErrorは使えないため、画像が無い場合はpublicにダミー画像を置くか、srcを直接変更してください
-              }}
               className="object-cover w-full h-full"
             />
           </div>
@@ -93,6 +91,14 @@ export default function Home() {
               <span className="text-accent font-mono text-lg">{s.level}</span>
             </li>
           ))}
+        </ul>
+      </section>
+
+      {/* 資格 */}
+      <section>
+        <SectionTitle>Certification</SectionTitle>
+        <ul className="list-disc ml-6 text-base">
+          <li>応用情報技術者</li>
         </ul>
       </section>
 
@@ -177,6 +183,7 @@ export default function Home() {
         </ul>
       </section>
     </div>
+    </>
   );
 }
 
