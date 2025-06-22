@@ -6,16 +6,16 @@ export default function Home() {
   // プロフィール・スキル・プロジェクト・SNS情報を直接定義
   const profile = {
     name: 'imaty',
-    title: 'Webアプリケーションエンジニア',
+    title: 'Web Application Developer',
     summary: [
-      '地方銀行向け勘定系システム開発を中心に、要件定義から保守運用まで幅広く経験。',
-      '堅牢性・信頼性を重視した設計と、現場視点の業務改善提案が強み。'
+      'Extensive experience in core banking system development for regional banks, covering requirements definition to maintenance and operations.',
+      'Specializes in robust and reliable system design, with a strong focus on operational improvement from a field perspective.'
     ],
     specialties: [
-      'Webアプリケーション開発',
-      '要件定義・設計・開発・テスト・運用',
-      'プロジェクトマネジメント',
-      '業務効率化・自動化'
+      'Web Application Development',
+      'Requirements Definition, Design, Development, Testing & Operations',
+      'Project Management',
+      'Workflow Efficiency & Automation'
     ]
   };
 
@@ -31,16 +31,16 @@ export default function Home() {
 
   const projects = [
     {
-      title: '地方銀行向け勘定系システム刷新',
+      title: 'Core Banking System Modernization for Regional Banks',
       period: '2019-2022',
-      description: '大規模な基幹システム刷新プロジェクトにて、要件定義・設計・開発・テスト・移行・運用まで一貫して担当。品質・納期・コストのバランスを重視しつつ、現場運用の効率化提案も実施。',
-      role: 'リーダー/開発エンジニア'
+      description: 'Led a large-scale core system renewal project, overseeing all phases from requirements definition to operations. Focused on balancing quality, delivery, and cost while proposing operational efficiency improvements.',
+      role: 'Lead/Development Engineer'
     },
     {
-      title: '情報系システムのAPI化推進',
+      title: 'API-First Transformation of Information Systems',
       period: '2022-2024',
-      description: '情報系システムのAPI化・内製化推進。設計・実装・テスト自動化・CI/CD導入などを主導。',
-      role: 'サブリーダー/開発エンジニア'
+      description: 'Spearheaded the API-first transformation and in-house development of information systems. Led design, implementation, test automation, and CI/CD pipeline establishment.',
+      role: 'Sub-Lead/Development Engineer'
     }
   ];
 
@@ -49,7 +49,7 @@ export default function Home() {
     { name: 'X (Twitter)', url: 'https://twitter.com/imaty_dev' }
   ];
 
-  const imagePath = '/profile/profile.png';
+  const imagePath = '/images/profile/profile.png';
 
   return (
     <>
@@ -61,7 +61,7 @@ export default function Home() {
           <div className="w-28 h-28 mb-4 rounded-full overflow-hidden ring-4 ring-accent/30 shadow-lg bg-gray-100">
             <Image
               src={imagePath}
-              alt="imaty プロフィール画像"
+              alt="imaty Profile Picture"
               width={112}
               height={112}
               className="object-cover w-full h-full"
@@ -84,7 +84,7 @@ export default function Home() {
 
       {/* スキル */}
       <section>
-        <SectionTitle>主なスキル</SectionTitle>
+        <SectionTitle>Skills</SectionTitle>
         <ul className="grid grid-cols-2 gap-3">
           {skills.map((s, i) => (
             <li key={i} className="flex items-center justify-between bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-100">
@@ -99,13 +99,13 @@ export default function Home() {
       <section>
         <SectionTitle>Certification</SectionTitle>
         <ul className="list-disc ml-6 text-base">
-          <li>応用情報技術者</li>
+          <li>Applied Information Technology Engineer Examination</li>
         </ul>
       </section>
 
       {/* プロジェクト */}
       <section>
-        <SectionTitle>主なプロジェクト</SectionTitle>
+        <SectionTitle>Projects</SectionTitle>
         <ul className="space-y-5">
           {projects.map((p, i) => (
             <li key={i} className="border border-gray-100 rounded-xl p-5 bg-gradient-to-tr from-blue-50 to-white shadow-md">
@@ -169,12 +169,12 @@ export default function Home() {
           <li>
             <a
               href="mailto:imaty1022@gmail.com"
-              aria-label="メール"
+              aria-label="Email"
               className="transition-transform hover:scale-110 hover:shadow-lg rounded-full"
             >
               <Image
                 src="/icons/mail.svg"
-                alt="メール"
+                alt="Email"
                 width={36}
                 height={36}
                 className="rounded-full bg-white"
