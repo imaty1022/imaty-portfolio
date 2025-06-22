@@ -123,7 +123,7 @@ export default function Home() {
         <ul className="flex space-x-8 justify-center mb-2">
           <li>
             <a
-              href="https://github.com/imaty"
+              href="https://github.com/tomoimai1022"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -140,7 +140,7 @@ export default function Home() {
           </li>
           <li>
             <a
-              href="https://twitter.com/imaty_dev"
+              href="https://x.com/imaty1022"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter)"
