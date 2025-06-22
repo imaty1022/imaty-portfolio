@@ -67,8 +67,8 @@ export default function Home() {
       <div className="space-y-16 max-w-2xl mx-auto py-10">
       {/* プロフィール */}
       <section>
-        <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center border border-gray-100 relative">
-          <div className="w-28 h-28 mb-4 rounded-full overflow-hidden ring-4 ring-accent/30 shadow-lg bg-gray-100">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center border border-gray-100 dark:border-gray-700 relative">
+          <div className="w-28 h-28 mb-4 rounded-full overflow-hidden ring-4 ring-accent/30 shadow-lg bg-gray-100 dark:bg-gray-700">
             <Image
               src={imagePath}
               alt="imaty Profile Picture"
@@ -77,11 +77,16 @@ export default function Home() {
               className="object-cover w-full h-full"
             />
           </div>
-          <h1 className="text-3xl font-bold mb-1 tracking-wide text-gray-900">{profile.name}</h1>
-          <p className="text-primary text-lg mb-3 font-medium">{profile.title}</p>
+          <h1 className="text-3xl font-bold mb-1 tracking-wide text-gray-900 dark:text-white">{profile.name}</h1>
+          <p className="text-primary dark:text-blue-400 text-lg mb-3 font-medium">{profile.title}</p>
           <div className="flex flex-wrap justify-center gap-2 mt-2">
             {profile.skills.map((s, i) => (
-              <span key={i} className="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-semibold">{s}</span>
+              <span 
+                key={i} 
+                className="bg-accent/10 dark:bg-blue-900/30 text-accent dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold"
+              >
+                {s}
+              </span>
             ))}
           </div>
         </div>
@@ -92,20 +97,25 @@ export default function Home() {
         <SectionTitle>Works</SectionTitle>
         <ul className="space-y-5">
           {works.map((p, i) => (
-            <li key={i} className="border border-gray-100 rounded-xl p-5 bg-gradient-to-tr from-blue-50 to-white shadow-md hover:shadow-lg transition-shadow">
-              <div className="font-bold text-lg mb-1 text-gray-800">
+            <li key={i} className="border border-gray-100 dark:border-gray-700 rounded-xl p-5 bg-gradient-to-tr from-blue-50 to-white dark:from-gray-800 dark:to-gray-800 shadow-md hover:shadow-lg transition-shadow">
+              <div className="font-bold text-lg mb-1 text-gray-800 dark:text-white">
                 {p.url ? (
-                  <a href={p.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                  <a href={p.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent dark:hover:text-blue-400 transition-colors">
                     {p.title} <span className="text-xs">↗</span>
                   </a>
-                ) : p.title}
+                ) : (
+                  <span className="dark:text-white">{p.title}</span>
+                )}
               </div>
-              <div className="text-xs text-gray-500 mb-2">{p.period} / {p.role}</div>
-              <div className="text-gray-700 text-sm mb-3">{p.description}</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">{p.period} / {p.role}</div>
+              <div className="text-gray-700 dark:text-gray-200 text-sm mb-3">{p.description}</div>
               {p.technologies && (
                 <div className="flex flex-wrap gap-2 mt-2">
                   {p.technologies.map((tech, techIdx) => (
-                    <span key={techIdx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded-md text-xs">
+                    <span 
+                      key={techIdx} 
+                      className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-200 px-2 py-1 rounded-md text-xs"
+                    >
                       {tech}
                     </span>
                   ))}
