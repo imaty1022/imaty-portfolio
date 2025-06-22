@@ -7,34 +7,49 @@ export default function Home() {
   const profile = {
     name: 'imaty',
     title: 'Web Application Developer',
-    summary: [
-      'Extensive experience in core banking system development for regional banks, covering requirements definition to maintenance and operations.',
-      'Specializes in robust and reliable system design, with a strong focus on operational improvement from a field perspective.'
-    ],
-    specialties: [
-      'Web Application Development',
-      'Requirements Definition, Design, Development, Testing & Operations',
-      'Project Management',
-      'Workflow Efficiency & Automation'
+    skills: [
+      'Vue.js',
+      'Vue.js(Nuxt.js)',
+      'React',
+      'TypeScript',
+      'Java(Spring Boot)',
+      'Java(Struts)',
+      'SQL',
+      'Shell Script',
     ]
   };
 
-  const skills = [
-    { name: 'Java', level: '★★★★☆' },
-    { name: 'TypeScript', level: '★★★☆☆' },
-    { name: 'SQL', level: '★★★☆☆' },
-    { name: 'Shell Script', level: '★★★☆☆' },
-    { name: 'Next.js', level: '★★★☆☆' },
-    { name: 'React', level: '★★★☆☆' },
-    { name: 'Vue.js', level: '★★★☆☆' },
-  ];
+  interface WorkItem {
+    title: string;
+    period: string;
+    description: string;
+    role: string;
+    url?: string;
+    technologies?: string[];
+  }
 
-  const projects = [
+  const works: WorkItem[] = [
+    {
+      title: 'Maternity Blog',
+      period: '2022-',
+      description: 'Developed and continuously updating a maternity blog website since 2022. The blog provides valuable information and resources for expecting and new mothers, with regular content updates and technical improvements.',
+      role: 'Full-stack Developer',
+      url: 'https://sakulifeblog.com/',
+      technologies: ['Vue.js', 'Nuxt.js', 'microCMS']
+    },
     {
       title: 'Core Banking System Modernization for Regional Banks',
       period: '2019-2022',
       description: 'Led a large-scale core system renewal project, overseeing all phases from requirements definition to operations. Focused on balancing quality, delivery, and cost while proposing operational efficiency improvements.',
-      role: 'Lead/Development Engineer'
+      role: 'Lead/Development Engineer',
+      technologies: ['Java', 'Spring Boot', 'Oracle']
+    },
+    {
+      title: 'Information System API Development',
+      period: '2022-2024',
+      description: 'Led the API-first transformation of information systems. Oversaw design, implementation, test automation, and CI/CD pipeline setup.',
+      role: 'Sub-Lead/Development Engineer',
+      technologies: ['TypeScript', 'Node.js', 'AWS']
     },
     {
       title: 'API-First Transformation of Information Systems',
@@ -44,18 +59,13 @@ export default function Home() {
     }
   ];
 
-  const sns = [
-    { name: 'GitHub', url: 'https://github.com/imaty' },
-    { name: 'X (Twitter)', url: 'https://twitter.com/imaty_dev' }
-  ];
-
   const imagePath = '/images/profile/profile.png';
 
   return (
     <>
       <ThemeToggle />
       <div className="space-y-16 max-w-2xl mx-auto py-10">
-      {/* プロフィールカード */}
+      {/* プロフィール */}
       <section>
         <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center border border-gray-100 relative">
           <div className="w-28 h-28 mb-4 rounded-full overflow-hidden ring-4 ring-accent/30 shadow-lg bg-gray-100">
@@ -69,27 +79,38 @@ export default function Home() {
           </div>
           <h1 className="text-3xl font-bold mb-1 tracking-wide text-gray-900">{profile.name}</h1>
           <p className="text-primary text-lg mb-3 font-medium">{profile.title}</p>
-          <div className="space-y-1 mb-2">
-            {profile.summary.map((s, i) => (
-              <p key={i} className="text-base text-gray-700">{s}</p>
-            ))}
-          </div>
           <div className="flex flex-wrap justify-center gap-2 mt-2">
-            {profile.specialties.map((s, i) => (
+            {profile.skills.map((s, i) => (
               <span key={i} className="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-semibold">{s}</span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* スキル */}
+      {/* プロジェクト */}
       <section>
-        <SectionTitle>Skills</SectionTitle>
-        <ul className="grid grid-cols-2 gap-3">
-          {skills.map((s, i) => (
-            <li key={i} className="flex items-center justify-between bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-100">
-              <span className="font-medium text-gray-700">{s.name}</span>
-              <span className="text-accent font-mono text-lg">{s.level}</span>
+        <SectionTitle>Works</SectionTitle>
+        <ul className="space-y-5">
+          {works.map((p, i) => (
+            <li key={i} className="border border-gray-100 rounded-xl p-5 bg-gradient-to-tr from-blue-50 to-white shadow-md hover:shadow-lg transition-shadow">
+              <div className="font-bold text-lg mb-1 text-gray-800">
+                {p.url ? (
+                  <a href={p.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                    {p.title} <span className="text-xs">↗</span>
+                  </a>
+                ) : p.title}
+              </div>
+              <div className="text-xs text-gray-500 mb-2">{p.period} / {p.role}</div>
+              <div className="text-gray-700 text-sm mb-3">{p.description}</div>
+              {p.technologies && (
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {p.technologies.map((tech, techIdx) => (
+                    <span key={techIdx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded-md text-xs">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -100,20 +121,6 @@ export default function Home() {
         <SectionTitle>Certification</SectionTitle>
         <ul className="list-disc ml-6 text-base">
           <li>Applied Information Technology Engineer Examination</li>
-        </ul>
-      </section>
-
-      {/* プロジェクト */}
-      <section>
-        <SectionTitle>Projects</SectionTitle>
-        <ul className="space-y-5">
-          {projects.map((p, i) => (
-            <li key={i} className="border border-gray-100 rounded-xl p-5 bg-gradient-to-tr from-blue-50 to-white shadow-md">
-              <div className="font-bold text-lg mb-1 text-gray-800">{p.title}</div>
-              <div className="text-xs text-gray-500 mb-2">{p.period} / {p.role}</div>
-              <div className="text-gray-700 text-sm">{p.description}</div>
-            </li>
-          ))}
         </ul>
       </section>
 
