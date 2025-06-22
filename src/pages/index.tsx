@@ -8,9 +8,8 @@ export default function Home() {
     name: 'imaty',
     title: 'Web Application Developer',
     skills: [
-      'Vue.js',
-      'Vue.js(Nuxt.js)',
-      'React',
+      'JavaScript(Vue.js/Nuxt.js)',
+      'JavaScript(React)',
       'TypeScript',
       'Java(Spring Boot)',
       'Java(Struts)',
@@ -35,28 +34,8 @@ export default function Home() {
       description: 'Developed and continuously updating a maternity blog website since 2022. The blog provides valuable information and resources for expecting and new mothers, with regular content updates and technical improvements.',
       role: 'Full-stack Developer',
       url: 'https://sakulifeblog.com/',
-      technologies: ['Vue.js', 'Nuxt.js', 'microCMS']
+      technologies: ['Vue.js', 'Nuxt.js', 'microCMS','Vercel']
     },
-    {
-      title: 'Core Banking System Modernization for Regional Banks',
-      period: '2019-2022',
-      description: 'Led a large-scale core system renewal project, overseeing all phases from requirements definition to operations. Focused on balancing quality, delivery, and cost while proposing operational efficiency improvements.',
-      role: 'Lead/Development Engineer',
-      technologies: ['Java', 'Spring Boot', 'Oracle']
-    },
-    {
-      title: 'Information System API Development',
-      period: '2022-2024',
-      description: 'Led the API-first transformation of information systems. Oversaw design, implementation, test automation, and CI/CD pipeline setup.',
-      role: 'Sub-Lead/Development Engineer',
-      technologies: ['TypeScript', 'Node.js', 'AWS']
-    },
-    {
-      title: 'API-First Transformation of Information Systems',
-      period: '2022-2024',
-      description: 'Spearheaded the API-first transformation and in-house development of information systems. Led design, implementation, test automation, and CI/CD pipeline establishment.',
-      role: 'Sub-Lead/Development Engineer'
-    }
   ];
 
   const imagePath = '/images/profile/profile.png';
