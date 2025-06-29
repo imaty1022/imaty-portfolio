@@ -119,7 +119,7 @@ export default function Home() {
         <div className="flex justify-center space-x-6 mb-2">
           {/* GitHub */}
           <a
-            href="https://github.com/tomoimai1022"
+            href="https://github.com/imaty1022"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
